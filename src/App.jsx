@@ -1,7 +1,10 @@
+import Cart from "./components/Cart"
 import Navbar from "./components/Navbar"
 import ProductCard from "./components/ProductCard"
+import { useState } from "react"
 
 const App = () => {
+  const [isCartOpen, setIsCartOpen] = useState(false)
   let products = [
   {
     "id": 1,
@@ -246,9 +249,14 @@ const App = () => {
 ]
   return (
     <div className="min-h-screen p-4">
-      <Navbar />
+      <Navbar setIsCartOpen = {setIsCartOpen} />
 
-      <div className="mt-15 grid grid-cols-4 gap-5">
+      {isCartOpen ? (
+        <div>
+        <Cart/>
+      </div>
+      ) : (
+        <div className="mt-15 grid grid-cols-4 gap-5">
         {products.map((product) => (
           <ProductCard
             key={product.id}
@@ -256,6 +264,9 @@ const App = () => {
           />
         ))}
       </div>
+      )}
+
+      
     </div>
   )
 }

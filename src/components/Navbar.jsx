@@ -1,5 +1,5 @@
 
-const Navbar = () => {
+const Navbar = ({setIsCartOpen}) => {
   return (
     <nav className="w-full bg-gray-950 px-2 py-4 text-white shadow-lg rounded-xl">
 
@@ -13,21 +13,14 @@ const Navbar = () => {
 
         <div className="flex items-center gap-10 text-base font-medium text-gray-300">
 
-          <a
+          <a onClick={() => setIsCartOpen(false)}
             href="#home"
             className="transition-colors duration-200 hover:text-indigo-400"
           >
             Home
           </a>
 
-          <a
-            href="#products"
-            className="transition-colors duration-200 hover:text-indigo-400"
-          >
-            Products
-          </a>
-
-          <a
+          <a onClick={() => setIsCartOpen(true)}
             href="#cart"
             className="transition-colors duration-200 hover:text-indigo-400"
           >
