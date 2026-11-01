@@ -1,9 +1,9 @@
 const Navbar = () => {
   return (
-    <div className="h-10 bg-black p-5 flex items-center justify-between">
+    <div className="h-15 bg-black text-white rounded p-5 flex items-center justify-between">
       <div>logo</div>
 
-      <div className="flex items-center gap-5">
+      <div className="flex items-center gap-10 text-xl">
         <p>Home</p>
         <p>Cart</p>
       </div>
