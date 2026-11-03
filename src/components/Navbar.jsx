@@ -1,5 +1,8 @@
+import { useContext } from "react"
+import { MyShop } from "../context/MyWebsite"
 
-const Navbar = ({setIsCartOpen}) => {
+const Navbar = () => {
+  let {setIsCartOpen} = useContext(MyShop)
   return (
     <nav className="w-full bg-gray-950 px-2 py-4 text-white shadow-lg rounded-xl">
 
