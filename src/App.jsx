@@ -5,6 +5,8 @@ import { useState } from "react"
 
 const App = () => {
   const [isCartOpen, setIsCartOpen] = useState(false)
+  const [cartItems, setCartItems] = useState([])
+  console.log("cart state => " ,cartItems)
   let products = [
   {
     "id": 1,
@@ -253,12 +255,12 @@ const App = () => {
 
       {isCartOpen ? (
         <div>
-        <Cart/>
+        <Cart cartItems = {cartItems}/>
       </div>
       ) : (
         <div className="mt-15 grid grid-cols-4 gap-5">
         {products.map((product) => (
-          <ProductCard
+          <ProductCard setCartItems = {setCartItems}
             key={product.id}
             product={product}
           />

@@ -1,5 +1,5 @@
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, setCartItems }) => {
   return (
     <div className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
 
@@ -50,7 +50,7 @@ const ProductCard = ({ product }) => {
             </h2>
           </div>
 
-          <button className="rounded-xl bg-indigo-600 px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-indigo-700 active:scale-95">
+          <button onClick={() => setCartItems(prev => [...prev, product])} className="rounded-xl bg-indigo-600 px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-indigo-700 active:scale-95">
             Add to Cart
           </button>
         </div>
